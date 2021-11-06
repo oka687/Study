@@ -2,9 +2,9 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // 500, 100, 50, 10
+        long start = System.nanoTime();
 
-        int money = 1000;
+        int money = 4850;
         int[] change = new int[4];
         change[0] = 500;
         change[1] = 100;
@@ -31,5 +31,8 @@ public class App {
 
         }
 
+        long end = System.nanoTime();
+
+        System.out.println(end - start);
     }
 }
