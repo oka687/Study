@@ -4,7 +4,7 @@ public class App {
 
         long start = System.nanoTime();
 
-        int money = 4850;
+        int money = 5680;
         int[] change = new int[4];
         change[0] = 500;
         change[1] = 100;
