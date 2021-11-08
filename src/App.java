@@ -17,14 +17,14 @@ public class App {
 
         String[] arry = { "D", "D", "D", "L", "U", "U", "U", "R" };
 
-        for (int i = 0; i < arry.length; i++) {
-            if (arry[i] == "L") {
-                y = y - 1 <= 0 ? y : y--;
-            } else if (arry[i] == "R") {
+        for (String num : arry) {
+            if (num == "L") {
+                y += y - 1 <= 0 ? y : y--;
+            } else if (num == "R") {
                 y = y + 1 > map ? y : y++;
-            } else if (arry[i] == "U") {
+            } else if (num == "U") {
                 x = x - 1 <= 0 ? x : x--;
-            } else if (arry[i] == "D") {
+            } else if (num == "D") {
                 x = x + 1 > map ? x : x++;
             }
         }
