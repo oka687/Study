@@ -36,7 +36,6 @@ public class App {
             }
         }
         System.out.println("x :" + x + " " + "y : " + y);
-
     }
 
 }
