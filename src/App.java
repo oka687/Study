@@ -1,57 +1,90 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // 주어진 수를 M번 더해서 가장 큰 수를 나타내야 하는데, 연속으로 더할 수 있는건 K가 최대이다.
+        int map = 0;
+        int x = 1;
+        int y = 1;
+        int count = 0;
 
-        int N = 7; // 주어지는 수
-        int M = 150; // 더해야 하는 횟수
-        int K = 11; // 연속 최대 횟수
+        boolean whileSwitch = true;
 
-        // K는 K <= M
-        if (K > M) {
+        List<String> arrow = new ArrayList<>();
 
-            System.out.println("K와 M을 다시 설정해주세요.");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("N의 크기 입력");
+        map = sc.nextInt();
+
+        sc.close();
+
+        String[] arry = { "D", "D", "D", "L", "U", "U", "U", "R" };
+
+        for (int i = 0; i < arry.length; i++) {
+            if (arry[i] == "L") {
+
+                if (y - 1 <= 0) {
+                    continue;
+                }
+                y--;
+                count++;
+            } else if (arry[i] == "R") {
+                if (y + 1 > map) {
+                    continue;
+                }
+                y++;
+                count++;
+            } else if (arry[i] == "U") {
+                if (x - 1 <= 0) {
+                    continue;
+                }
+                x--;
+                count++;
+            } else if (arry[i] == "D") {
+                if (x + 1 > map) {
+                    continue;
+                }
+                x++;
+                count++;
+            }
+
         }
 
-        int ban = K + 1; // 쉼을 포함한 횟수
+        System.out.println("N = " + count);
+        System.out.println("x :" + x + " " + "y : " + y);
 
-        int ban1 = M / ban; // 쉼을 포함한 나누기
+        // Scanner arrowList = new Scanner(System.in);
+        // System.out.println("방향키 입력 N을 입력 시, 종료");
 
-        int ban2 = M % ban; // 나머지
+        // while (whileSwitch) {
 
-        // 큰거랑 그 다음 큰거 담을 변수 선언
-        int big = 0;
-        int semiBig = 0;
+        // switch (arrowList.nextLine()) {
+        // case "L":
+        // arrow.add(arrowList.nextLine());
+        // break;
+        // case "R":
+        // arrow.add(arrowList.nextLine());
+        // break;
+        // case "U":
+        // arrow.add(arrowList.nextLine());
+        // break;
+        // case "D":
+        // arrow.add(arrowList.nextLine());
+        // break;
+        // case "N":
+        // whileSwitch = false;
+        // default:
+        // System.out.println("다시 입력");
+        // }
+        // }
 
-        // List으로 변환할 배열
-        int[] arr = { 2, 4, 5, 4, 6, 7, 9 };
+        // arrowList.close();
 
-        // 리스트 화
-        ArrayList<Integer> list = new ArrayList<>();
-
-        // 배열의 리스트화
-        for (int i = 0; i < arr.length; i++) {
-
-            list.add(arr[i]);
-        }
-
-        // 정렬
-        Collections.sort(list);
-
-        int size = list.size() - 1; // 가장 큰수
-        int semiSize = list.size() - 2; // 가장 그 다음 큰수
-
-        big = list.get(size);
-        semiBig = list.get(semiSize);
-
-        int a = big * K + semiBig; // 큰수+작은수 1사이클
-        int b = a * ban1; // 사이클 * 나눈값
-        int c = big * ban2;// 나머지
-
-        System.out.println(b + c);
+        // System.out.println(arrow);
 
     }
+
 }
