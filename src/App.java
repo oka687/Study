@@ -19,19 +19,12 @@ public class App {
 
         for (int i = 0; i < arry.length; i++) {
             if (arry[i] == "L") {
-
                 y = y - 1 <= 0 ? y : y--;
-
             } else if (arry[i] == "R") {
-
                 y = y + 1 > map ? y : y++;
-
             } else if (arry[i] == "U") {
-
                 x = x - 1 <= 0 ? x : x--;
-
             } else if (arry[i] == "D") {
-
                 x = x + 1 > map ? x : x++;
             }
         }
