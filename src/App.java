@@ -1,4 +1,7 @@
+import java.util.Random;
 import java.util.Scanner;
+
+import javax.naming.event.NamingExceptionEvent;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -51,6 +54,20 @@ public class App {
             System.out.println("");
         }
 
+        // 캐릭터 좌표 계산
+        while (true) {
+            Random xRan = new Random();
+            int dX = xRan.nextInt(N);
+            int dY = xRan.nextInt(M);
+
+            if (map[dX][dY] == 0) {
+                continue;
+            } else {
+                x = dX;
+                y = dY;
+                break;
+            }
+        }
     }
 
 }
